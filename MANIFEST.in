@@ -1,0 +1,4 @@
+graft src/dynamore
+graft docs
+include *.rst
+global-exclude *.pyc
