@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="dynamore.policy.AddRichfolder"
+        title="dynamore.policy: Add Richfolder"
+    />
+
+        
+    <permission
         id="dynamore.policy.AddRichdocument"
         title="dynamore.policy: Add Richdocument"
     />

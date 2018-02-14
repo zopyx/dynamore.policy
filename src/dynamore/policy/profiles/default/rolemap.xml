@@ -3,6 +3,14 @@
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission name="dynamore.policy: Add Richfolder" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+        
     <permission name="dynamore.policy: Add Richdocument" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
