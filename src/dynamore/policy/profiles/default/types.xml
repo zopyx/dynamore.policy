@@ -4,4 +4,5 @@
   <!--<object name="example_ct" meta_type="Dexterity FTI"/>-->
   <object meta_type="Dexterity FTI" name="richdocument"/>
   <object meta_type="Dexterity FTI" name="richfolder"/>
+  <object meta_type="Dexterity FTI" name="dynaperson"/>
 </object>
