@@ -93,11 +93,16 @@ KEYWORDS = [
 ]
 
 
-KEYWORDS_VOCABULARY = SimpleVocabulary.fromValues(KEYWORDS)
+KEYWORDS_TERMS = [SimpleTerm(name, name, name) for name in KEYWORDS]
+KEYWORDS_VOCABULARY = SimpleVocabulary(KEYWORDS_TERMS)
 
-NUMBER_TYPE_VOCABULARY = SimpleVocabulary.fromValues([u'phone', u'mobile', u'fax'])
+NUMBER_TYPE_VOCABULARY = SimpleVocabulary([
+    SimpleTerm(value=u'phone', token=u'phone', title=u'Phone'),
+    SimpleTerm(value=u'mobile', token=u'mobile', title=u'Mobile'),
+    SimpleTerm(value=u'fax', token=u'fax', title=u'Fax'),
+ ])
 
-ORGANIZATION_VOCABULARY = SimpleVocabulary([
+ORGANIZATIONS_VOCABULARY = SimpleVocabulary([
     SimpleTerm(value=u'default', token=u'default', title=u'Dynamore DE'),
     SimpleTerm(value=u'dynamore-ch', token=u'dynamore-ch', title=u'Dynamore CH'),
     SimpleTerm(value=u'dynamore-se', token=u'dynamore-se', title=u'Dynamore SE'),
@@ -149,12 +154,12 @@ class IDynaperson(model.Schema):
         required=True
     )
 
-    directives.widget(organization=CheckBoxFieldWidget)
-    organization = schema.List(
-        title=_('Organization'),
-        description=_('Organization'),
+    directives.widget(organizations=CheckBoxFieldWidget)
+    organizations = schema.List(
+        title=_('Organizations'),
+        description=_('Organizations'),
         required=True,
-        value_type=schema.Choice(source=ORGANIZATION_VOCABULARY),
+        value_type=schema.Choice(source=ORGANIZATIONS_VOCABULARY),
     )
 
     directives.widget(keywords=CheckBoxFieldWidget)
