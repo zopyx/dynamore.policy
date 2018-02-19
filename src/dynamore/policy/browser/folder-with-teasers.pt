@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ita.wtpprofile">
+<body>
+    <metal:main fill-slot="content-core">
+
+        <tal:loop repeat="folder view/entries">
+            <div>
+                <a tal:attributes="href folder/absolute_url" tal:content="folder/Title"/>
+				<div tal:define="picture nocall:folder/teaser_image"
+					 tal:condition="nocall:picture">
+					<img tal:attributes="src string:${folder/absolute_url}/@@download/teaser_image/${picture/filename};
+										 height picture/_height | nothing;
+										 width picture/_width | nothing;"
+						/>
+				</div>
+                <span tal:content="folder/Description" />
+            </div>            
+        </tal:loop>
+
+    </metal:main> 
+</body>
+</html>
+

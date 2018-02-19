@@ -43,6 +43,7 @@ setup(
         'plone.app.dexterity',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
+        'plone.restapi',
         'z3c.jbot',
     ],
     extras_require={

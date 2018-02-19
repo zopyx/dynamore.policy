@@ -10,6 +10,33 @@
       directory="overrides"
       layer="dynamore.policy.interfaces.IDynamorePolicyLayer"
       />
+ 
+  <!-- richfolder -->
+
+  <browser:page
+      name="view"
+      for="..content.richfolder.IRichfolder"
+      permission="zope2.View"
+      template="folder-with-teasers.pt"
+      class=".richfolder.Richfolder"
+  /> 
+  <browser:page
+      name="folders-with-teasers"
+      for="..content.richfolder.IRichfolder"
+      permission="zope2.View"
+      template="folder-with-teasers.pt"
+      class=".richfolder.Richfolder"
+  /> 
+
+  <!-- richdocument -->
+
+  <browser:page
+      name="view"
+      for="..content.richdocument.IRichdocument"
+      permission="zope2.View"
+      template="richdocument.pt"
+  /> 
+
 
   <!-- Publish static files -->
   <plone:static
