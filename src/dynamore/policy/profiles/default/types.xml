@@ -5,4 +5,5 @@
   <object meta_type="Dexterity FTI" name="richdocument"/>
   <object meta_type="Dexterity FTI" name="richfolder"/>
   <object meta_type="Dexterity FTI" name="dynaperson"/>
+  <object meta_type="Dexterity FTI" name="dynalocation"/>
 </object>
