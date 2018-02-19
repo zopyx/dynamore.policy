@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ita.wtpprofile">
+<body>
+    <metal:main fill-slot="content-core">
+
+        <div class="person-contacts">
+            <span class="label" i18n:translate="">Contacts</span>
+            <ul>
+                <li tal:repeat="d view/get_contacts">
+                    <span tal:content="d/number_type"/>
+                    <span tal:content="d/number"/>
+                </li>
+            </ul>
+        </div>
+
+        <div class="person-organization">
+            <span class="label" i18n:translate="">Organization</span>
+            <span tal:content="context/organization"/>
+        </div>
+
+        <div class="person-keywords">
+            <span class="label" i18n:translate="">Keywords</span>
+            <span tal:content="context/keywords"/>
+        </div>
+
+    </metal:main> 
+</body>
+</html>
+

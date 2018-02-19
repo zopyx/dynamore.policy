@@ -38,6 +38,17 @@
   /> 
 
 
+  <!-- dynaperson -->
+
+  <browser:page
+      name="view"
+      for="..content.dynaperson.IDynaperson"
+      permission="zope2.View"
+      template="dynaperson.pt"
+      class=".dynaperson.Dynaperson"
+  /> 
+
+
   <!-- Publish static files -->
   <plone:static
       name="dynamore.policy"
