@@ -87,14 +87,15 @@ KEYWORDS = [
     'Vertrieb DYNAFORM',
     'Verwaltung',
     'eta/Dynaform',
-    'mETA',
-    '',
+    'mETA'
 ]
 
 
 KEYWORDS_VOCABULARY = SimpleVocabulary.fromValues(KEYWORDS)
 
 NUMBER_TYPE_VOCABULARY = SimpleVocabulary.fromValues([u'phone', u'mobile', u'fax'])
+
+ORGANIZATION_VOCABULARY = SimpleVocabulary.fromValues([u'default', u'scale', u'dynamore-ch'])
 
 
 class IContactRow(form.Schema):
@@ -139,6 +140,14 @@ class IDynaperson(model.Schema):
         required=True
     )
 
+    directives.widget(organization=CheckBoxFieldWidget)
+    organization = schema.List(
+        title=_('Organization'),
+        description=_('Organization'),
+        required=True,
+        value_type=schema.Choice(source=ORGANIZATION_VOCABULARY),
+    )
+
     directives.widget(keywords=CheckBoxFieldWidget)
     keywords = schema.List(
         title=_('Roles'),
@@ -153,6 +162,7 @@ class IDynaperson(model.Schema):
         value_type=DictRow(
             title=_(u'Contacts'), 
             schema=IContactRow))
+
 
 
 @implementer(IDynaperson)
