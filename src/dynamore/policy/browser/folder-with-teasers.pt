@@ -5,21 +5,40 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="ita.wtpprofile">
 <body>
-    <metal:main fill-slot="content-core">
+    <metal:main fill-slot="content-core"
+        tal:define="entries view/entries">
 
-        <tal:loop repeat="folder view/entries">
+
+        <h2>Folders</h2>
+        <tal:loop repeat="folder entries/folders">
             <div>
                 <a tal:attributes="href folder/absolute_url" tal:content="folder/Title"/>
 				<div tal:define="picture nocall:folder/teaser_image"
-					 tal:condition="nocall:picture">
+                     tal:condition="nocall:picture">
 					<img tal:attributes="src string:${folder/absolute_url}/@@download/teaser_image/${picture/filename};
-										 height picture/_height | nothing;
-										 width picture/_width | nothing;"
-						/>
+                                         height picture/_height | nothing;
+                                         width picture/_width | nothing;"
+                    />
 				</div>
                 <span tal:content="folder/Description" />
             </div>            
         </tal:loop>
+
+        <h2>Files</h2>
+        <tal:loop repeat="doc entries/documents">
+            <div>
+                <a tal:attributes="href doc/absolute_url" tal:content="doc/Title"/>
+				<div tal:define="picture nocall:doc/teaser_image"
+                     tal:condition="nocall:picture">
+					<img tal:attributes="src string:${doc/absolute_url}/@@download/teaser_image/${picture/filename};
+                                         height picture/_height | nothing;
+                                         width picture/_width | nothing;"
+                    />
+				</div>
+                <span tal:content="doc/Description" />
+            </div>            
+        </tal:loop>
+
 
     </metal:main> 
 </body>

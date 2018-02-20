@@ -10,11 +10,15 @@ class Richfolder(BrowserView):
 
     def entries(self):
 
+        result = dict(folders=[], documents=[])
         query = {
-                'portal_type': 'richfolder',
                 'path' : {'depth': 1, 'query': '/'.join(self.context.getPhysicalPath())}
                 }
 
         brains = self.catalog(**query)
         for brain in brains:
-            yield brain.getObject()
+            if brain.portal_type in ('richfolder', 'Folder'):
+                result['folders'].append(brain.getObject())
+            else:
+                result['documents'].append(brain.getObject())
+        return result
