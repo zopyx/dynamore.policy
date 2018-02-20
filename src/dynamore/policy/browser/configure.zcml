@@ -10,6 +10,15 @@
       directory="overrides"
       layer="dynamore.policy.interfaces.IDynamorePolicyLayer"
       />
+
+  <!-- Migration API -->
+  <browser:page
+      name="remote-exists"
+      for="*"
+      permission="zope2.View"
+      class=".api.API"
+      attribute="remote_exists"
+      />
  
   <!-- richfolder -->
 
