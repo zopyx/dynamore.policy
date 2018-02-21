@@ -13,7 +13,7 @@ from zope import schema
 from zope.interface import implementer
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
-from dynamore.policy import _
+from dynamore.policy.i18n import _
 
 
 KEYWORDS = [

@@ -9,7 +9,7 @@ from plone.namedfile.field import NamedBlobImage
 from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import implementer
-from dynamore.policy import _
+from dynamore.policy.i18n import _
 
 
 class IRichdocument(model.Schema):
