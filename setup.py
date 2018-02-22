@@ -43,6 +43,8 @@ setup(
         'plone.app.dexterity',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
+        'plone.directives.form',
+        'collective.z3cform.datagridfield',
         'plone.restapi',
         'z3c.jbot',
     ],
