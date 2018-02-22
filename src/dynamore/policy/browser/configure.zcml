@@ -19,6 +19,16 @@
       class=".api.API"
       attribute="remote_exists"
       />
+
+  <browser:page
+      name="recreate-plone-site"
+      for="*"
+      permission="cmf.ManagePortal"
+      class=".api.API"
+      attribute="recreate_plone_site"
+      />
+ 
+  <!-- richfolder -->
  
   <!-- richfolder -->
 
