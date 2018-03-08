@@ -33,7 +33,7 @@ class API(BrowserView):
             lookup that is not dependent on Acquisition but on
             real traversal.
             E.g. a request to `/plone/papers/conference/papers` would
-            resolve to the first `papers` folder if the second 
+            resolve to the first `papers` folder if the second
             `papers` folder does not exist.
         """
         current = self.context.restrictedTraverse('/')
