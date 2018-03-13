@@ -46,7 +46,6 @@ setup(
         'plone.directives.form',
         'collective.z3cform.datagridfield',
         'plone.restapi',
-        'Products.PloneFormGen',
         'z3c.jbot',
     ],
     extras_require={
