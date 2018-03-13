@@ -6,6 +6,5 @@
       <dependency>profile-plone.restapi:default</dependency>
       <dependency>profile-Products.PloneFormGen:default</dependency>
       <dependency>profile-plone.app.multilingual:default</dependency>
-      <dependency>profile-dynamore.seminarsdx:default</dependency>
   </dependencies>
 </metadata>
